@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEAM DRAGON | Official Portal</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+    body {
+      background: radial-gradient(circle at top, #0f172a 0%, #05070c 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 30px 16px 60px;
+      text-align: center;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Header / Team Logo Section */
+    .hero {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 22px;
+      padding: 32px 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 35px rgba(14, 165, 233, 0.2);
+    }
+    .team-logo {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 3px solid #ef4444;
+      box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ef4444, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    .hero p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+
+    /* Team Owner Section */
+    .section-title {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #38bdf8;
+      margin-bottom: 16px;
+    }
+    .owner-card {
+      background: linear-gradient(145deg, #0c1527, #111d35);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 20px;
+      padding: 26px 20px;
+      max-width: 340px;
+      margin: 0 auto 36px;
+      box-shadow: 0 12px 30px rgba(0, 140, 255, 0.22);
+      transition: transform 0.3s ease;
+    }
+    .owner-card:hover {
+      transform: translateY(-5px);
+    }
+    .owner-dp {
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #38bdf8;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.7);
+      margin-bottom: 14px;
+    }
+    .owner-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .owner-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+      padding: 5px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Application Form Section */
+    .form-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 28px 22px;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+    .form-box h2 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 6px;
+      font-size: 1.4rem;
+    }
+    .form-box .sub {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+    }
+    .input-group {
+      margin-bottom: 16px;
+    }
+    .input-group label {
+      display: block;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .input-group input, .input-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #334155;
+      background: #090d16;
+      color: #ffffff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-group input:focus, .input-group textarea:focus {
+      border-color: #38bdf8;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #0284c7, #2563eb);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: 8px;
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.45);
+      transition: opacity 0.2s;
+    }
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Top Team Section -->
+    <div class="hero">
+      <img class="team-logo" src="dragon-logo.jpg" alt="Team Dragon Logo" />
+      <h1>TEAM DRAGON</h1>
+      <p>OFFICIAL CREW &bull; ADMIN DORA</p>
+    </div>
+
+    <!-- Team Owner Section -->
+    <div class="section-title">Leadership</div>
+    <div class="owner-card">
+      <img class="owner-dp" src="dora-dp.jpg" alt="DORA DP" />
+      <div class="owner-name">DORA</div>
+      <div class="owner-badge">Team Owner</div>
+    </div>
+
+    <!-- Private Application Form (Sends directly to your Email) -->
+    <div class="form-box">
+      <h2>Crew Application</h2>
+      <p class="sub">Fill the form below to apply. Only the Team Owner will review your details.</p>
+
+      <form action="https://formsubmit.co/Sandunsudagar75@gmail.com" method="POST">
+        <!-- Email Settings -->
+        <input type="hidden" name="_subject" value="New Team Dragon Application!" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+
+        <div class="input-group">
+          <label>ඔබේ නම (Name / Nickname)</label>
+          <input type="text" name="Name" placeholder="Ex: Kasun / DragonBoy" required />
+        </div>
+
+        <div class="input-group">
+          <label>WhatsApp අංකය (WhatsApp Number)</label>
+          <input type="tel" name="WhatsApp" placeholder="Ex: 07X XXX XXXX" required />
+        </div>
+
+        <div class="input-group">
+          <label>වයස (Age)</label>
+          <input type="number" name="Age" placeholder="Ex: 19" required />
+        </div>
+
+        <div class="input-group">
+          <label>ඇයි Team Dragon එකට එකතු වෙන්න කැමති? (Reason)</label>
+          <textarea name="Reason" rows="3" placeholder="ඔබ ගැන කෙටියෙන් ලියන්න..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">SEND APPLICATION</button>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>
