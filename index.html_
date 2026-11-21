@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="si" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEAM DRAGON | Official Portal</title>
+  <style>
+    :root[data-theme="dark"] {
+      --bg: radial-gradient(circle at top, #0f172a, #050811 75%);
+      --card: rgba(15, 23, 42, 0.88);
+      --input-bg: rgba(2, 6, 23, 0.85);
+      --text: #ffffff;
+      --muted: #cbd5e1;
+      --border: rgba(56, 189, 248, 0.35);
+      --accent: #38bdf8;
+      --accent-dark: #0284c7;
+      --badge-bg: rgba(30, 41, 59, 0.92);
+      --upload-bg: rgba(14, 165, 233, 0.08);
+      --logo-bg: #070c18;
+    }
+
+    :root[data-theme="light"] {
+      --bg: radial-gradient(circle at top, #e0f2fe, #f8fafc 75%);
+      --card: rgba(255, 255, 255, 0.95);
+      --input-bg: #f1f5f9;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: rgba(2, 132, 199, 0.3);
+      --accent: #0284c7;
+      --accent-dark: #0369a1;
+      --badge-bg: #e2e8f0;
+      --upload-bg: rgba(2, 132, 199, 0.06);
+      --logo-bg: #f0f9ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 20px 16px 60px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 14px;
+    }
+
+    .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px 20px;
+      margin-bottom: 22px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .dragon-ring {
+      width: 126px;
+      height: 126px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 26px rgba(56, 189, 248, 0.45);
+      background: var(--logo-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .dragon-ring svg {
+      width: 92px;
+      height: 92px;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .owner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 18px 8px 9px;
+      text-align: left;
+    }
+
+    .dora-ring {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: var(--logo-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+    }
+
+    .dora-ring svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .owner-label {
+      font-size: 10px;
+      letter-spacing: 0.9px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .owner-name {
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .form-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .form-card h2 {
+      text-align: center;
+      font-size: 22px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .form-desc {
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+    }
+
+    .upload-box {
+      display: block;
+      border: 2px dashed var(--accent);
+      background: var(--upload-bg);
+      border-radius: 14px;
+      padding: 18px 14px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .upload-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .upload-hint {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .preview-wrap {
+      margin-top: 12px;
+      display: none;
+      text-align: center;
+    }
+
+    .preview-wrap img {
+      max-width: 100%;
+      max-height: 240px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    .status-box {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <button type="button" class="theme-btn" id="themeToggle">
+        <span id="themeIcon">☀️</span>
+        <span id="themeText">Light Mode</span>
+      </button>
+    </div>
+
+    <section class="hero">
+      <!-- Dragon Logo -->
+      <div class="dragon-ring" aria-label="Team Dragon Logo">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="dragonGrad" x1="15" y1="15" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#7dd3fc" />
+              <stop offset="55%" stop-color="#38bdf8" />
+              <stop offset="100%" stop-color="#0284c7" />
+            </linearGradient>
+          </defs>
+          <!-- Horns -->
+          <path d="M44 30 C30 16, 18 18, 15 26 C24 27, 32 32, 38 39 Z" fill="url(#dragonGrad)" />
+          <path d="M76 30 C90 16, 102 18, 105 26 C96 27, 88 32, 82 39 Z" fill="url(#dragonGrad)" />
+          <!-- Dragon Crest & Head -->
+          <path d="M60 20 L67 34 L82 36 L88 52 L78 66 L82 86 L60 102 L38 86 L42 66 L32 52 L38 36 L53 34 Z" fill="url(#dragonGrad)" />
+          <!-- Inner Shield / Dragon Face Detail -->
+          <path d="M60 32 L72 48 L67 74 L60 88 L53 74 L48 48 Z" fill="#070c18" />
+          <!-- Eyes -->
+          <polygon points="43,48 54,52 46,56" fill="#fef08a" />
+          <polygon points="77,48 66,52 74,56" fill="#fef08a" />
+          <!-- Center Fang / Flame -->
+          <path d="M60 44 L65 62 L60 76 L55 62 Z" fill="#38bdf8" />
+        </svg>
+      </div>
+
+      <h1>TEAM DRAGON</h1>
+      <p class="subtitle">TikTok Squad Official Portal &amp; Member Application</p>
+
+      <div class="owner-badge">
+        <!-- DORA Logo -->
+        <div class="dora-ring" aria-label="Dora Logo">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="doraGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#bae6fd" />
+                <stop offset="100%" stop-color="#0284c7" />
+              </linearGradient>
+            </defs>
+            <path d="M32 7 L51 16 L47 41 L32 57 L17 41 L13 16 Z" fill="url(#doraGrad)" />
+            <circle cx="32" cy="31" r="14" fill="#070c18" />
+            <text x="32" y="36" text-anchor="middle" fill="#38bdf8" font-size="15" font-weight="900" font-family="system-ui, sans-serif">D</text>
+          </svg>
+        </div>
+        <div>
+          <div class="owner-label">TEAM OWNER</div>
+          <div class="owner-name">DORA</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <h2>TikTok Squad අයැදුම්පත</h2>
+      <p class="form-desc">Team Dragon TikTok squad එකට එක්වීමට විස්තර පුරවා ඔබේ TikTok page screenshot එක upload කරන්න.</p>
+
+      <form id="squadForm">
+        <div class="field">
+          <label for="ign">නම / In-Game Name *</label>
+          <input type="text" id="ign" name="name" placeholder="ඔබේ නම ඇතුළත් කරන්න" required />
+        </div>
+
+        <div class="field">
+          <label for="tiktokUsername">TikTok Username / Page Link *</label>
+          <input type="text" id="tiktokUsername" name="tiktok" placeholder="@your_tiktok_page" required />
+        </div>
+
+        <div class="field">
+          <label for="role">භූමිකාව / Role</label>
+          <select id="role" name="role">
+            <option value="Squad Member">Squad Member</option>
+            <option value="Video Editor">Video Editor</option>
+            <option value="Moderator">Moderator</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>ටික්ටොක් පේජ් එකේ ප්‍රොෆයිල් එක අප්ලෝඩ් කරන්න *</label>
+          <label for="tiktokScreenshot" class="upload-box">
+            <div class="upload-title">ටික්ටොක් පේජ් එකේ ප්‍රොෆයිල් එක අප්ලෝඩ් කරන්න</div>
+            <div class="upload-hint">ඔබේ TikTok profile page එකේ screenshot එක තෝරන්න (JPG / PNG)</div>
+          </label>
+          <input type="file" id="tiktokScreenshot" name="screenshot" accept="image/*" required />
+          <div class="preview-wrap" id="previewWrap">
+            <img id="previewImg" alt="TikTok Profile Screenshot Preview" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="note">අමතර විස්තර / Note</label>
+          <textarea id="note" name="note" rows="3" placeholder="කෙටි විස්තරයක් ලියන්න..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Application</button>
+        <div class="status-box" id="statusBox"></div>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    // ඔබේ Formspree endpoint URL එක මෙතනට දමන්න (උදා: "https://formspree.io/f/xxxxxxxx")
+    const FORMSPREE_URL = "";
+
+    const rootEl = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const themeText = document.getElementById("themeText");
+
+    themeToggle.addEventListener("click", () => {
+      const isDark = rootEl.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        rootEl.setAttribute("data-theme", "light");
+        themeIcon.textContent = "🌙";
+        themeText.textContent = "Dark Mode";
+      } else {
+        rootEl.setAttribute("data-theme", "dark");
+        themeIcon.textContent = "☀️";
+        themeText.textContent = "Light Mode";
+      }
+    });
+
+    const fileInput = document.getElementById("tiktokScreenshot");
+    const previewWrap = document.getElementById("previewWrap");
+    const previewImg = document.getElementById("previewImg");
+
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files && fileInput.files[0];
+      if (!file) {
+        previewWrap.style.display = "none";
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        previewImg.src = ev.target.result;
+        previewWrap.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+    });
+
+    const form = document.getElementById("squadForm");
+    const statusBox = document.getElementById("statusBox");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nameVal = document.getElementById("ign").value.trim();
+      const tiktokVal = document.getElementById("tiktokUsername").value.trim();
+      const roleVal = document.getElementById("role").value;
+      const noteVal = document.getElementById("note").value.trim();
+      const file = fileInput.files && fileInput.files[0];
+
+      if (!nameVal || !tiktokVal || !file) {
+        statusBox.style.display = "block";
+        statusBox.style.background = "rgba(248, 113, 113, 0.15)";
+        statusBox.style.color = "#f87171";
+        statusBox.textContent = "කරුණාකර නම, TikTok page එක, සහ profile screenshot එක ඇතුළත් කරන්න.";
+        return;
+      }
+
+      if (FORMSPREE_URL) {
+        const fd = new FormData();
+        fd.append("name", nameVal);
+        fd.append("tiktok", tiktokVal);
+        fd.append("role", roleVal);
+        fd.append("note", noteVal);
+        fd.append("screenshot", file);
+
+        try {
+          const res = await fetch(FORMSPREE_URL, {
+            method: "POST",
+            body: fd,
+            headers: { Accept: "application/json" }
+          });
+          if (res.ok) {
+            statusBox.style.display = "block";
+            statusBox.style.background = "rgba(74, 222, 128, 0.15)";
+            statusBox.style.color = "#4ade80";
+            statusBox.textContent = "අයැදුම්පත සහ screenshot එක සාර්ථකව email එකට යවන ලදී!";
+            form.reset();
+            previewWrap.style.display = "none";
+            return;
+          }
+        } catch (err) {
+          // fallback below
+        }
+      }
+
+      statusBox.style.display = "block";
+      statusBox.style.background = "rgba(56, 189, 248, 0.15)";
+      statusBox.style.color = "#38bdf8";
+      statusBox.innerHTML =
+        "<strong>Preview තහවුරු වුණා:</strong><br>" +
+        "නම: " + nameVal + "<br>" +
+        "TikTok: " + tiktokVal + "<br>" +
+        "Screenshot: " + file.name + "<br>" +
+        "<small>සැබෑ email එකට එන්න නම් FORMSPREE_URL තැනට ඔබේ Formspree link එක දාන්න.</small>";
+    });
+  </script>
+</body>
+</html>
