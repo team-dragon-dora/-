@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEAM DRAGON | Official Portal</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #ffffff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 28px 16px 60px;
+      text-align: center;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .hero {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 20px;
+      padding: 28px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+    .logo-img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #38bdf8;
+      margin-bottom: 14px;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.4);
+    }
+    h1 {
+      font-size: 1.9rem;
+      letter-spacing: 2px;
+      color: #38bdf8;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .owner-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      border-radius: 999px;
+      padding: 8px 18px 8px 8px;
+    }
+    .owner-dp {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #60a5fa;
+    }
+    .owner-info {
+      text-align: left;
+    }
+    .owner-role {
+      font-size: 0.72rem;
+      color: #93c5fd;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .owner-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .form-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 20px;
+      padding: 24px 20px;
+      text-align: left;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+    .form-box h2 {
+      font-size: 1.3rem;
+      color: #38bdf8;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .form-desc {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .field {
+      margin-bottom: 14px;
+    }
+    label {
+      display: block;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: #020617;
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #38bdf8;
+    }
+    button {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+    button:hover {
+      opacity: 0.94;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <img src="80afa3d7-f072-4175-b264-702e3e990c47_EE8EDCF6-946F-497C-BA61-9B156F9398E9.jpeg" alt="Team Dragon Logo" class="logo-img" />
+      <h1>TEAM DRAGON</h1>
+      <p class="subtitle">Official Team Portal &amp; Member Application</p>
+
+      <div class="owner-card">
+        <img src="a4afc35c-c2e8-4c9b-ad1f-4cfcb6b57756_95F68D4C-FB3F-4CC2-9493-7CA51875A180.jpeg" alt="DORA DP" class="owner-dp" />
+        <div class="owner-info">
+          <div class="owner-role">Team Owner</div>
+          <div class="owner-name">DORA</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-box">
+      <h2>අයැදුම්පත (Application Form)</h2>
+      <p class="form-desc">Team Dragon සමඟ එක්වීමට පහත විස්තර පුරවා Submit කරන්න.</p>
+
+      <form action="https://formsubmit.co/Sandunsudagar75@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Team Dragon Application" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <div class="field">
+          <label for="name">නම / In-Game Name *</label>
+          <input type="text" id="name" name="Name" required placeholder="ඔබේ නම ඇතුළත් කරන්න" />
+        </div>
+
+        <div class="field">
+          <label for="age">වයස *</label>
+          <input type="number" id="age" name="Age" required placeholder="වයස" />
+        </div>
+
+        <div class="field">
+          <label for="role">බලාපොරොත්තු වන Role / Position *</label>
+          <input type="text" id="role" name="Role" required placeholder="උදා: Rusher, Support, Sniper..." />
+        </div>
+
+        <div class="field">
+          <label for="contact">Contact / WhatsApp / TikTok *</label>
+          <input type="text" id="contact" name="Contact" required placeholder="දුරකථන අංකය හෝ Username" />
+        </div>
+
+        <div class="field">
+          <label for="note">අමතර විස්තර</label>
+          <textarea id="note" name="Message" rows="3" placeholder="ඔබ ගැන කෙටි විස්තරයක්..."></textarea>
+        </div>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
